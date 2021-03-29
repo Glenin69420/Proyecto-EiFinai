@@ -9,7 +9,7 @@ public class Trabajadora {
 	protected String Sexo;
 	protected int Edad;// Puede ser un string
 	//protected float Salario;//Voy hacer que cada herencia tenga este atributo para que la clase diseno no este sola.
-	protected String Proyecto;
+	protected int Proyecto;
 	protected int Evaluacion;
 	
 	public Trabajadora(String identificador, String nombre, String apellido, String direccion, String sexo, int edad) {
@@ -20,8 +20,8 @@ public class Trabajadora {
 		Direccion = direccion;
 		Sexo = sexo;
 		Edad = edad;
-		this.Proyecto= Proyecto;
-		this.Evaluacion = Evaluacion;
+		this.Proyecto++;
+		this.Evaluacion = 0;
 	}
 
 	public String getIdentificador() {
@@ -72,7 +72,7 @@ public class Trabajadora {
 		Edad = edad;
 	}
 
-	public String getProyecto() {
+	public int getProyecto() {
 		return Proyecto;
 	}
 
