@@ -1,6 +1,0 @@
-package Logico;
-
-class TiendaTest {
-
-	
-}
