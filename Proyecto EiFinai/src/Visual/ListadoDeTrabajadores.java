@@ -47,6 +47,8 @@ import javax.swing.ScrollPaneConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
 
 public class ListadoDeTrabajadores extends JDialog {
 
@@ -84,7 +86,7 @@ public class ListadoDeTrabajadores extends JDialog {
 		setTitle("Listado de trabajadores");
 		setBounds(100, 100, 771, 551);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setLocationRelativeTo(null);
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
