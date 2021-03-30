@@ -30,6 +30,15 @@ public class RegistroDeTrabajadores extends JDialog {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
+	private JRadioButton RbtnJefe;
+	private JRadioButton RbtnProgramador;
+	private JRadioButton RbtnPlanificador;
+	private JRadioButton RbtnDisenador;
+	private JTextField textField_7;
+	private JPanel PanelJefe;
+	private JPanel PanelProgramador;
+	private JPanel PanelPlanificador;
+	private JTextField textField_8;
 	private JTextField textField_6;
 
 	/**
@@ -66,7 +75,7 @@ public class RegistroDeTrabajadores extends JDialog {
 			
 			JPanel panel_1 = new JPanel();
 			panel_1.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Imformacion", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-			panel_1.setBounds(10, 10, 662, 135);
+			panel_1.setBounds(10, 79, 662, 135);
 			panel.add(panel_1);
 			panel_1.setLayout(null);
 			
@@ -127,41 +136,117 @@ public class RegistroDeTrabajadores extends JDialog {
 			
 			JPanel panel_2 = new JPanel();
 			panel_2.setBorder(new TitledBorder(null, "Tipo de trabajador", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panel_2.setBounds(10, 155, 662, 59);
+			panel_2.setBounds(10, 10, 662, 59);
 			panel.add(panel_2);
 			panel_2.setLayout(null);
 			
-			JRadioButton rdbtnNewRadioButton = new JRadioButton("Jefe de proyecto.");
-			rdbtnNewRadioButton.setSelected(true);
-			rdbtnNewRadioButton.setBounds(20, 19, 140, 21);
-			panel_2.add(rdbtnNewRadioButton);
+			RbtnJefe = new JRadioButton("Jefe de proyecto.");
+			RbtnJefe.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					PanelJefe.setVisible(true);
+					PanelProgramador.setVisible(false);
+					PanelPlanificador.setVisible(false);
+					RbtnPlanificador.setSelected(false);
+					RbtnProgramador.setSelected(false);
+					RbtnDisenador.setSelected(false);
+					
+				}
+			});
+			RbtnJefe.setSelected(true);
+			RbtnJefe.setBounds(20, 19, 140, 21);
+			panel_2.add(RbtnJefe);
 			
-			JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Programadores.");
-			rdbtnNewRadioButton_1.setBounds(180, 19, 140, 21);
-			panel_2.add(rdbtnNewRadioButton_1);
+			RbtnProgramador = new JRadioButton("Programadores.");
+			RbtnProgramador.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					PanelJefe.setVisible(false);
+					PanelProgramador.setVisible(true);
+					PanelPlanificador.setVisible(false);
+					RbtnPlanificador.setSelected(false);
+					RbtnProgramador.setSelected(true);
+					RbtnDisenador.setSelected(false);
+					RbtnJefe.setSelected(false);
+				}
+			});
+			RbtnProgramador.setBounds(180, 19, 140, 21);
+			panel_2.add(RbtnProgramador);
 			
-			JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Planificadores.");
-			rdbtnNewRadioButton_2.setBounds(340, 19, 140, 21);
-			panel_2.add(rdbtnNewRadioButton_2);
+			RbtnPlanificador = new JRadioButton("Planificadores.");
+			RbtnPlanificador.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					PanelJefe.setVisible(false);
+					PanelProgramador.setVisible(false);
+					PanelPlanificador.setVisible(true);
+					RbtnPlanificador.setSelected(true);
+					RbtnProgramador.setSelected(false);
+					RbtnDisenador.setSelected(false);
+					RbtnJefe.setSelected(false);
+				}
+			});
+			RbtnPlanificador.setBounds(340, 19, 140, 21);
+			panel_2.add(RbtnPlanificador);
 			
-			JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Dise\u00F1adores.");
-			rdbtnNewRadioButton_3.setBounds(500, 19, 140, 21);
-			panel_2.add(rdbtnNewRadioButton_3);
+			RbtnDisenador = new JRadioButton("Dise\u00F1adores.");
+			RbtnDisenador.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					PanelJefe.setVisible(false);
+					PanelProgramador.setVisible(false);
+					PanelPlanificador.setVisible(false);
+					RbtnPlanificador.setSelected(false);
+					RbtnProgramador.setSelected(false);
+					RbtnDisenador.setSelected(true);
+					RbtnJefe.setSelected(false);
+				}
+			});
+			RbtnDisenador.setBounds(500, 19, 140, 21);
+			panel_2.add(RbtnDisenador);
 			
-			JPanel panel_3 = new JPanel();
-			panel_3.setBorder(new TitledBorder(null, "Jefe de proyecto", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panel_3.setBounds(10, 224, 662, 59);
-			panel.add(panel_3);
-			panel_3.setLayout(null);
+			PanelJefe = new JPanel();
+			PanelJefe.setBorder(new TitledBorder(null, "Jefe de proyecto", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			PanelJefe.setBounds(10, 224, 662, 59);
+			panel.add(PanelJefe);
+			PanelJefe.setLayout(null);
 			
 			JLabel lblNewLabel_6 = new JLabel("Cantidad de trabajadores:");
 			lblNewLabel_6.setBounds(10, 25, 148, 13);
-			panel_3.add(lblNewLabel_6);
+			PanelJefe.add(lblNewLabel_6);
 			
 			textField_6 = new JTextField();
 			textField_6.setBounds(160, 23, 96, 19);
-			panel_3.add(textField_6);
+			PanelJefe.add(textField_6);
 			textField_6.setColumns(10);
+			
+			PanelProgramador = new JPanel();
+			PanelProgramador.setVisible(false);
+			PanelProgramador.setBorder(new TitledBorder(null, "Programadores", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			PanelProgramador.setBounds(10, 224, 662, 59);
+			panel.add(PanelProgramador);
+			PanelProgramador.setLayout(null);
+			
+			JLabel lblNewLabel_7 = new JLabel("Lenguajes de programacion:");
+			lblNewLabel_7.setBounds(10, 25, 165, 13);
+			PanelProgramador.add(lblNewLabel_7);
+			
+			textField_8 = new JTextField();
+			textField_8.setBounds(175, 23, 96, 19);
+			PanelProgramador.add(textField_8);
+			textField_8.setColumns(10);
+			
+			PanelPlanificador = new JPanel();
+			PanelPlanificador.setVisible(false);
+			PanelPlanificador.setBorder(new TitledBorder(null, "Planificadores", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			PanelPlanificador.setBounds(10, 224, 662, 59);
+			panel.add(PanelPlanificador);
+			PanelPlanificador.setLayout(null);
+			
+			JLabel lblNewLabel_8 = new JLabel("Cantidad de dias:");
+			lblNewLabel_8.setBounds(10, 25, 148, 13);
+			PanelPlanificador.add(lblNewLabel_8);
+			
+			textField_7 = new JTextField();
+			textField_7.setBounds(112, 23, 96, 19);
+			PanelPlanificador.add(textField_7);
+			textField_7.setColumns(10);
 		}
 		{
 			JPanel buttonPane = new JPanel();
