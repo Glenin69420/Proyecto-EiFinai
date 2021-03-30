@@ -19,6 +19,7 @@ public class ProyectoPrincipal extends JFrame {
 	private Dimension dim;
 	public Image ImagenFondo;
 	public URL Fondo;
+	private String Hola;
 
 
 	/**
